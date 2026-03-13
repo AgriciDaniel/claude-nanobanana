@@ -9,7 +9,27 @@ AI image generation skill for Claude Code where **Claude acts as Creative Direct
 Unlike simple API wrappers, Claude interprets your intent, selects domain expertise, constructs optimized prompts using a 6-component Reasoning Brief system, and orchestrates Gemini for the best possible results.
 
 [![Claude Code Skill](https://img.shields.io/badge/Claude%20Code-Skill-blue)](https://claude.ai/claude-code)
+[![Version](https://img.shields.io/badge/version-2.1.0-coral)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+<details>
+<summary>Table of Contents</summary>
+
+- [Installation](#installation)
+- [Quick Start](#quick-start)
+- [Commands](#commands)
+- [How It Works](#how-it-works)
+- [What Makes This Different](#what-makes-this-different)
+- [The 6-Component Reasoning Brief](#the-6-component-reasoning-brief)
+- [Domain Modes](#domain-modes)
+- [Models](#models)
+- [Architecture](#architecture)
+- [Requirements](#requirements)
+- [Changelog](CHANGELOG.md)
+- [Contributing](#contributing)
+- [License](#license)
+
+</details>
 
 ## Installation
 

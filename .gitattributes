@@ -1,0 +1,5 @@
+# Linguist overrides — ensure accurate language bar on GitHub
+*.md linguist-documentation
+*.json linguist-data
+screenshots/* linguist-generated
+scripts/*.py linguist-vendored
