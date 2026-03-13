@@ -1,0 +1,54 @@
+name: Validate Skill
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check SKILL.md line count
+        shell: bash
+        run: |
+          lines=$(wc -l < nano-banana/SKILL.md)
+          echo "SKILL.md: ${lines} lines"
+          if [ "${lines}" -gt 500 ]; then
+            echo "::error::SKILL.md exceeds 500 lines"
+            exit 1
+          fi
+
+      - name: Verify required files exist
+        shell: bash
+        run: |
+          files=(
+            nano-banana/SKILL.md
+            nano-banana/references/gemini-models.md
+            nano-banana/references/mcp-tools.md
+            nano-banana/references/post-processing.md
+            nano-banana/references/prompt-engineering.md
+            nano-banana/scripts/setup_mcp.py
+            nano-banana/scripts/validate_setup.py
+            install.sh
+          )
+          for f in "${files[@]}"; do
+            test -f "${f}" && echo "OK: ${f}" || { echo "::error::Missing ${f}"; exit 1; }
+          done
+
+      - name: Check for outdated rate limits
+        shell: bash
+        run: |
+          if grep -rl "15 RPM" nano-banana/ README.md 2>/dev/null; then
+            echo "::error::Found outdated rate limits"
+            exit 1
+          fi
+          echo "No outdated rate limits found"

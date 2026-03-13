@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "Nano Banana Pro 2"
+abstract: "AI image generation skill for Claude Code — Creative Director powered by Gemini"
+authors:
+  - family-names: "Daniel"
+    given-names: "Agrici"
+    alias: "AgriciDaniel"
+repository-code: "https://github.com/AgriciDaniel/claude-nanobanana"
+url: "https://www.skool.com/ai-marketing-hub-pro"
+license: MIT
+version: "2.1.0"
+date-released: "2026-03-13"
+keywords:
+  - ai-image-generation
+  - claude-code
+  - gemini
+  - prompt-engineering
+  - mcp
